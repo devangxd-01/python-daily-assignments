@@ -1,3 +1,4 @@
+print("By Devang Bhardwaj")
 # Exercise 6: Count even and odd numbers between 1 and 50.
 even_count = 0
 odd_count = 0
