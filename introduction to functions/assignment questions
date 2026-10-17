@@ -1,0 +1,7 @@
+#Question 1 
+def student_details(name, course="Python Programming"):
+    print("hello",name)
+    print("Your course is", course)
+
+student_details("Akhil")
+student_details("Rahul", "Data Science")
