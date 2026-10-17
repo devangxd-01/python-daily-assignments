@@ -1,0 +1,34 @@
+#1. function with default argument
+def studentdetails(name,city,course):
+    print("student Name:", name)
+    print("student City:", city)
+    print("student Course:", course)
+    print("================================")
+
+studentdetails("Mohit", "Bareilly", "Python")
+
+
+#2. function with default argument
+def studentdetails(name,city = None,course = None):
+    print("student Name:", name)
+    print("student City:", city)
+    print("student Course:", course)
+    print("================================")
+
+studentdetails("Mohit", "Bareilly", "Python")
+studentdetails("Mohit")
+
+#3. function with default argument
+def CalculateBill(price,discount):
+    discount_amount = (price * discount) / 100
+    bill = price - discount_amount
+    print("Original Price: ₹", price)
+    print("Discount Amount: ₹", discount_amount)
+    print("Final Bill: ₹", bill)
+    print("================================")
+
+CalculateBill(20000,0) # 0% discount
+CalculateBill(10000,10) # UPI = 10% discount
+CalculateBill(35000,20) # Card = 20% discount
+
+

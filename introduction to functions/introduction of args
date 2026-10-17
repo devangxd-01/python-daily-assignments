@@ -1,0 +1,8 @@
+#introduction of args
+def add(*args):
+    total = 0
+    for i in args:
+        total = total + i
+    print("Total:", total)
+
+add(10, 20)
