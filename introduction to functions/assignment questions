@@ -6,6 +6,7 @@ def student_details(name, course="Python Programming"):
 student_details("Akhil")
 student_details("Rahul", "Data Science")
 
+
 #Question 2
 def calculate_discount(bill_amount, discount=None):
 
@@ -36,3 +37,61 @@ def calculate_discount(bill_amount, discount=None):
     print("Final Amount:", final_amount)
 
 calculate_discount(4500)
+
+
+#Question 3
+def empProfile(**details):
+    for key, value in details.items():
+        print(key , ":" ,value)
+empProfile(name="Soniya", Department="HR", salary=50000, city="Bangalore", experience=5)
+
+
+#Question 4
+def studentResult(name,*marks,**details):
+    print("Student Name:", name)
+    print("Subject Marks:", marks)
+
+    if len(marks) > 0:
+        total_marks = sum(marks)
+        average_marks = total_marks / len(marks)
+        print("Total Marks:", total_marks)
+        print("Average Marks:", average_marks)
+
+    print("=========Additional Details=========")
+    for key, value in details.items():
+        print(key, ":", value)
+
+studentResult("Alice",80,90,60,50,rollno=32454, sem=1, sec='A')
+
+
+#question 5
+def addItems(*args):
+    print("Prices:", args)
+    print("Total:", sum(args))
+
+def customerDetails(name, city, membership):
+    print("Name:", name)
+    print("City:", city)
+    print("Membership:", membership)
+
+prices = [100, 200, 300, 400]
+addItems(*prices)
+
+customer = {"name": "Aman", "city": "Mumbai", "membership": "Gold"}
+customerDetails(**customer)
+
+
+#Question 6
+def calculate_avg(*marks):
+    if not marks:
+        return "No marks provided" 
+    for i in marks:
+        if not isinstance(i, (int, float)) or isinstance(i, bool):
+            return "Invalid input: All marks should be numbers"
+        if i < 0 or i > 100:
+            return "Invalid input: Marks should be between 0 and 100"
+    return sum(marks) / len(marks)
+
+print(calculate_avg(55, 65, 75, 85, 95 ,True)) #all marks should be numbers
+print(calculate_avg()) #no marks provided
+print(calculate_avg(55, 65, 75, 85, 95)) #valid input

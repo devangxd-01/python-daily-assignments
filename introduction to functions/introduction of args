@@ -6,3 +6,13 @@ def add(*args):
     print("Total:", total)
 
 add(10, 20)
+
+#args = tuple form
+#**kwargs = dictionary form
+
+def additems(*args):
+    print("Prices:", args)
+    print("Total:", sum(args))
+
+prices = [100, 200, 300, 400]
+additems(*prices)  
