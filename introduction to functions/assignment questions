@@ -5,3 +5,34 @@ def student_details(name, course="Python Programming"):
 
 student_details("Akhil")
 student_details("Rahul", "Data Science")
+
+#Question 2
+def calculate_discount(bill_amount, discount=None):
+
+    if discount is not None:
+        if 0 <= discount <= 100:
+            discount_percent = discount
+        else:
+            print("Invalid Discount Percentage")
+            
+    else:
+        if bill_amount < 1000:
+            discount_percent = 0
+        elif bill_amount < 3000:
+            discount_percent = 5
+        elif bill_amount < 5000:
+            discount_percent = 10
+        elif bill_amount < 10000:
+            discount_percent = 15
+        else:
+            discount_percent = 20
+
+    discount_amount = bill_amount * discount_percent / 100
+    final_amount = bill_amount - discount_amount
+
+    print("Original Bill:", bill_amount)
+    print("Discount %:", discount_percent)
+    print("Discount Amount:", discount_amount)
+    print("Final Amount:", final_amount)
+
+calculate_discount(4500)
