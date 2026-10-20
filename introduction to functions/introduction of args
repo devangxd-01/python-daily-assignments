@@ -7,7 +7,7 @@ def add(*args):
 
 add(10, 20)
 
-#args = tuple form
+#*args = tuple form
 #**kwargs = dictionary form
 
 def additems(*args):
@@ -16,3 +16,5 @@ def additems(*args):
 
 prices = [100, 200, 300, 400]
 additems(*prices)  
+
+

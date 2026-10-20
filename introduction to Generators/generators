@@ -1,6 +1,21 @@
-#Generators
-# #1 to 10 even number 
+#introduction of yield
 
+#without loop  
+def even_numbers(start, end):
+    for num in range(start, end + 1):
+        if num % 2 == 0:
+            yield num
+
+
+i = even_numbers(1, 10)
+print(next(i,"error:iteration Over"))
+print(next(i,"error:iteration Over"))
+print(next(i,"error:iteration Over"))
+print(next(i,"error:iteration Over"))
+print(next(i,"error:iteration Over"))
+print(next(i,"error:iteration Over"))
+
+#with loop
 def even_numbers(start, end):
     for num in range(start, end + 1):
         if num % 2 == 0:
@@ -9,3 +24,60 @@ def even_numbers(start, end):
 
 for i in even_numbers(1, 10):
     print(i)
+
+
+#Generators
+#1
+def get_numbers():
+    yield [10,20,30]
+
+for ex in get_numbers():
+    print(ex)
+
+#2
+def get_numbers():
+    yield 10
+    yield 20
+    yield 30
+ex = get_numbers()
+print(next(ex))
+print(next(ex))
+print(type(ex))
+
+#introduction of yield and generators 
+#student records
+students = [
+    {"name": "Alice", "marks": [20, 30, 40]},
+    {"name": "Bob", "marks": [22, 32, 42]},
+    {"name": "Charlie", "marks": [21, 31, 41]},
+    {"name": "David", "marks": [23, 33, 43]},
+    {"name": "Eve", "marks": [20, 30, 40]}
+]
+
+def generate_result(student_records):
+    for student in student_records:
+        name = student["name"]
+        marks = student["marks"]
+        total_marks = sum(marks)
+        average_marks = total_marks / len(marks)
+        if average_marks >= 35:
+            status = "Pass"
+        else:
+            status = "Fail"
+            
+        yield {"name": name, "total_marks": total_marks, "average_marks": average_marks, "status": status}
+ex = generate_result(students)
+for i in ex:
+    print(i)
+
+
+#orders
+
+orders = [
+    {"id":101,"amount":1500,"payment":"Success"},
+    {"id":102,"amount":2500,"payment":"Failed"},
+    {"id":103,"amount":3500,"payment":"Success"},
+    {"id":104,"amount":4500,"payment":"Failed"},
+    {"id":105,"amount":5500,"payment":"Success"}
+]
+
