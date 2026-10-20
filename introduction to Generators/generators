@@ -1,0 +1,11 @@
+#Generators
+# #1 to 10 even number 
+
+def even_numbers(start, end):
+    for num in range(start, end + 1):
+        if num % 2 == 0:
+            yield num
+
+
+for i in even_numbers(1, 10):
+    print(i)
