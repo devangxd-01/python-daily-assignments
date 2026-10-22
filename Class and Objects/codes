@@ -1,0 +1,65 @@
+#class
+#OOPS
+
+#1
+class Employee:
+    def addEmpDetails(self,E_ID,E_Name,E_Salary,E_Company):
+        self.id = E_ID
+        self.name = E_Name
+        self.salary = E_Salary
+        self.company = E_Company
+    def showEmpDetails(self):
+        print("Employee ID:",self.id)
+        print("Employee Name:",self.name)
+        print("Employee Salary:",self.salary)
+        print("Employee Company:",self.company)
+
+
+
+e1=Employee()
+e1.addEmpDetails(111,"Raj",12000,"HCL")
+e1.showEmpDetails()
+print("="*25)
+
+
+e2=Employee()
+e2.addEmpDetails(222,"Ansh chaudhary",12000,"HCL")
+e2.showEmpDetails()
+print("="*25)
+
+
+
+#constructors
+#constructors are used to initialise the value for the current value
+#__init__(constructor)
+
+
+#making one variable static = E_Company
+class Employee:
+    E_Company = "HCL"#Static variable
+    def addEmpDetails(self,E_ID,E_Name,E_Salary):
+        self.id = E_ID#Instance variable
+        self.name = E_Name
+        self.salary = E_Salary
+    def showEmpDetails(self):
+        print("Employee ID:",self.id)
+        print("Employee Name:",self.name)
+        print("Employee Salary:",self.salary)
+        print("Employee Company:",Employee.E_Company)
+
+
+
+e1=Employee()
+e1.addEmpDetails(111,"Raj",12000)
+e1.showEmpDetails()
+print("="*25)
+
+
+e2=Employee()
+e2.addEmpDetails(222,"Ansh chaudhary",12000)
+e2.showEmpDetails()
+print("="*25)
+
+
+
+
